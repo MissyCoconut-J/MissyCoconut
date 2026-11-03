@@ -1,0 +1,128 @@
+
+============================================================
+🔍 VERIFYING REPORT CASES
+============================================================
+
+▶ [Refined key] Key = [1 1; 1 2]
+  • Det = 1 ≡ 1 (mod 26), gcd = 1, Det⁻¹ = 1
+  • K⁻¹ = [2 25; 25 1], K·K⁻¹ = I: True
+  • Plaintext  : GENSHINIMPACTISTHEMOSTFUNGAMEX
+  • Ciphertext : LQGZQZWFCSDGCLMGMRBQMGAVUBNACA
+  • Block  1: 'GE'  x=(7, 5)  Kx=(12, 17)  mod 26=(12, 17)  ➔ 'LQ'
+  • Block  2: 'NS'  x=(14, 19)  Kx=(33, 52)  mod 26=(7, 0)  ➔ 'GZ'
+  ... (13 more blocks)
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [Main case study] Key = [9 4; 2 7]
+  • Det = 55 ≡ 3 (mod 26), gcd = 1, Det⁻¹ = 9
+  • K⁻¹ = [11 16; 8 3], K·K⁻¹ = I: True
+  • Plaintext  : ILOVESENRENBANKA
+  • Ciphertext : YXOBQMWDZSDPMVYC
+  • Block  1: 'IL'  x=(9, 12)  Kx=(129, 102)  mod 26=(25, 24)  ➔ 'YX'
+  • Block  2: 'OV'  x=(15, 22)  Kx=(223, 184)  mod 26=(15, 2)  ➔ 'OB'
+  ... (6 more blocks)
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [Genshin Impact] Key = [4 1; 3 2]
+  • Det = 5 ≡ 5 (mod 26), gcd = 1, Det⁻¹ = 21
+  • K⁻¹ = [16 5; 15 6], K·K⁻¹ = I: True
+  • Plaintext  : GENSHINIMPACTISTHEMOSTFUNGAMEX
+  • Ciphertext : GEWBOPMHPSGIKZRSKHOQRSSHKDQCRK
+  • Block  1: 'GE'  x=(7, 5)  Kx=(33, 31)  mod 26=(7, 5)  ➔ 'GE'
+  • Block  2: 'NS'  x=(14, 19)  Kx=(75, 80)  mod 26=(23, 2)  ➔ 'WB'
+  ... (13 more blocks)
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [Task-sheet benchmark] Key = [4 1; 3 2]
+  • Det = 5 ≡ 5 (mod 26), gcd = 1, Det⁻¹ = 21
+  • K⁻¹ = [16 5; 15 6], K·K⁻¹ = I: True
+  • Plaintext  : ALGEBRAA
+  • Ciphertext : PAGEZPEE
+  • Block  1: 'AL'  x=(1, 12)  Kx=(16, 27)  mod 26=(16, 1)  ➔ 'PA'
+  • Block  2: 'GE'  x=(7, 5)  Kx=(33, 31)  mod 26=(7, 5)  ➔ 'GE'
+  ... (2 more blocks)
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [3 x 3 example (first block)] Key = [2 3 1; 1 2 4; 3 1 2]
+  • Det = 25 ≡ 25 (mod 26), gcd = 1, Det⁻¹ = 25
+  • K⁻¹ = [0 5 16; 16 25 7; 5 19 25], K·K⁻¹ = I: True
+  • Plaintext  : ILO
+  • Ciphertext : QOQ
+  • Block  1: 'ILO'  x=(9, 12, 15)  Kx=(69, 93, 69)  mod 26=(17, 15, 17)  ➔ 'QOQ'
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [Other student's ciphertext] Key = [8 1; 9 3]
+  • Det = 15 ≡ 15 (mod 26), gcd = 1, Det⁻¹ = 7
+  • K⁻¹ = [21 19; 15 4], K·K⁻¹ = I: True
+  • Plaintext  : NEEDCOFFEE
+  • Ciphertext : MKREMTBTSH
+  • Block  1: 'NE'  x=(14, 5)  Kx=(117, 141)  mod 26=(13, 11)  ➔ 'MK'
+  • Block  2: 'ED'  x=(5, 4)  Kx=(44, 57)  mod 26=(18, 5)  ➔ 'RE'
+  ... (3 more blocks)
+  ➔ Ciphertext matches expected: ✅ PASS
+  ➔ Decryption returns padded text: ✅ PASS
+  ➔ Re-encryption matches ciphertext: ✅ PASS
+
+▶ [Other student's ciphertext: decryption direction]
+  • K⁻¹ = [21 19; 15 4]
+  • Block  1: 'MK'  x=(13, 11)  K⁻¹y=(482, 239)  mod 26=(14, 5)  ➔ 'NE'
+  • Block  2: 'RE'  x=(18, 5)  K⁻¹y=(473, 290)  mod 26=(5, 4)  ➔ 'ED'
+  • Block  3: 'MT'  x=(13, 20)  K⁻¹y=(653, 275)  mod 26=(3, 15)  ➔ 'CO'
+  • Block  4: 'BT'  x=(2, 20)  K⁻¹y=(422, 110)  mod 26=(6, 6)  ➔ 'FF'
+  • Block  5: 'SH'  x=(19, 8)  K⁻¹y=(551, 317)  mod 26=(5, 5)  ➔ 'EE'
+  • Recovered Plaintext: NEEDCOFFEE
+
+✨ All report cases verified successfully: True
+
+============================================================
+📊 VALID KEYS COUNTING ANALYSIS
+============================================================
+1. Valid 2x2 keys by modulus (Brute Force vs Formula):
+   • m = 26: 157248 of 456976 (34.41%), Formula: 157248, Match: True
+   • m = 27: 314928 of 531441 (59.26%), Formula: 314928, Match: True
+   • m = 29: 682080 of 707281 (96.44%), Formula: 682080, Match: True
+
+2. 3x3 counts (Brute Force vs Formula):
+   • p = 2: Brute Force 168, Formula 168, Match: True
+   • p = 3: Brute Force 11232, Formula 11232, Match: True
+   • Valid 3x3 keys mod 26 (Formula): 1634038189056 (30.10% of 26⁹)
+
+============================================================
+🧩 KERNEL TEST & FIXED BLOCKS ANALYSIS
+============================================================
+3. Kernel test (Kv = 0 only for v = 0): 157248 matrices, agrees with rule: True
+4. Fixed blocks for key [9 4; 2 7]: [(0, 0), (0, 13), (13, 0), (13, 13)]
+   • Mean fixed blocks per key: 4.00
+   Distribution: {1: 48074, 2: 72111, 4: 24037, 13: 4340, 26: 6510, 52: 2170, 169: 2, 338: 3, 676: 1}
+   K2 fixed blocks: 26
+   Exactly 4: 15.3%; at least 26: 5.5%
+   • Keys fixing only ZZ: 30.6%
+
+============================================================
+🔓 KNOWN-PLAINTEXT ATTACK DEMONSTRATION
+============================================================
+5. Consistent keys for IL ➔ YX: 312
+   After adding ES ➔ QM: [(9, 4, 2, 7)]
+   Recovered key (IL, ES): [[9, 4], [2, 7]]
+   Usable pairs: (13, 28)
+   3x3 recovery: ([[2, 3, 1], [1, 2, 4], [3, 1, 2]], (0, 1, 2))
+   Attack on full message: ([[9, 4], [2, 7]], (0, 2))
+
+============================================================
+🧪 RUNNING UNIT TESTS
+============================================================
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
