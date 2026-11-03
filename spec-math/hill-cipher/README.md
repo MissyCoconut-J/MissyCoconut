@@ -5,6 +5,8 @@ Stage 1 Specialist Mathematics. Uses A=1, ..., Y=25, Z=0.
 ## Report and code
 
 - [Final investigation report (PDF)](Spec_Matrix.pdf)
+- [LaTeX source](main.tex)
+- [Answer-sheet figure required by LaTeX](Matrix_answer.pdf)
 - [Python program](hill_toolkit.py)
 - [Saved verification output](sample_output.txt)
 
@@ -22,3 +24,7 @@ In VS Code, open this folder, select a Python 3 interpreter, and run these comma
 The investigation checks encryption/decryption, valid-key counts, fixed blocks and known-plaintext recovery. It also tests a refined key [[1,1],[1,2]] with only ZZ fixed. This improves that property only; the cipher remains linear and insecure. Text encoding is for modulus 26; other moduli are used for matrix counting, not a larger text alphabet.
 
 AI assisted code generation and revision. `sample_output.txt` contains the actual verification output, including five unit tests.
+
+## Rebuild in Overleaf
+
+Download `main.tex` and `Matrix_answer.pdf`, then upload both to the same Overleaf project folder. Set `main.tex` as the main document and compile with pdfLaTeX. The source corresponds to the final report stored here.
