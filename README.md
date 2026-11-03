@@ -6,6 +6,7 @@ A collection of school assignments organised by subject and task, including plan
 
 | Subject | Assignment | Progress |
 | --- | --- | --- |
+| [Specialist Mathematics](spec-math/) | [Hill Cipher](spec-math/hill-cipher/) | Code and verification output available |
 | [Digital Technologies](digital-technologies/) | [Task 3 — Python Store](digital-technologies/task-03-python-store/) | Part 1 complete; Parts 2 and 3 pending |
 
 ## Finding Files
