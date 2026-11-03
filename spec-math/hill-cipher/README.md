@@ -4,11 +4,12 @@ Stage 1 Specialist Mathematics. Uses A=1, ..., Y=25, Z=0.
 
 ## Report and code
 
-- [Final investigation report (PDF)](Spec_Matrix.pdf)
+| **📄 Final report** | **🐍 Python code** | **✅ Test output** |
+| :---: | :---: | :---: |
+| **[Spec_Matrix.pdf](Spec_Matrix.pdf)** | **[hill_toolkit.py](hill_toolkit.py)** | **[sample_output.txt](sample_output.txt)** |
+
 - [LaTeX source](main.tex)
 - [Answer-sheet figure required by LaTeX](Matrix_answer.pdf)
-- [Python program](hill_toolkit.py)
-- [Saved verification output](sample_output.txt)
 
 Run with Python 3 (standard library only):
 
