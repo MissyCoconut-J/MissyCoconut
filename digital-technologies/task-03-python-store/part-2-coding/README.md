@@ -2,7 +2,7 @@
 
 | Stage | Code | What changed |
 | --- | --- | --- |
-| 1. Menu and products | [商店系统_第一版.py](versions/商店系统_第一版.py) | The program shows six menu options and lists 15 products. Option 6 exits the program. |
+| 1. Menu and products | [store_v1.py](versions/store_v1.py) | The program shows six menu options and lists 15 products. Option 6 exits the program. |
 | 2. Shopping cart | Planned: `versions/stage_2_cart.py` | Add, view and remove items. Limit the cart to three items. |
 | 3. Final version | Planned: `store.py` | Add checkout, change and reward points. Check invalid inputs. |
 
