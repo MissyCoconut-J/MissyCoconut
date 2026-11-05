@@ -57,11 +57,12 @@ while True:
 
     elif choice == "2":
         try:
+            # Check the limit first so a full cart cannot take another item.
             if len(cart) >= max_item:
                 print(f"You can only add up to {max_item} items to your cart.")
                 continue
             product_id = int(input("Enter the product ID to add to cart: "))
-            # Use a list comprehension to find the product with the matching ID.
+            # Stop at the first product with this ID. Use None if no product matches.
             selected_product = next((product for product in products if product["id"] == product_id), None)
             if selected_product:
                 cart.append(selected_product)
@@ -76,15 +77,19 @@ while True:
             print("Your cart is empty.")
         else:
             print("\nYour Cart:")
+            # Start at 1 so the numbers match what customers enter to remove an item.
             for i, item in enumerate(cart, start=1):
                 print(f"{i}. {item['name']} - ${item['price']}")
+            # Add the prices of all items to show the total before checkout.
             print(f"Total price: ${sum(item['price'] for item in cart)}")
-            # Allow the customer to remove items from the cart.
+            # Let the customer press Enter to keep the cart as it is.
             remove_id = input("Enter the cart item ID to remove from cart (or press Enter to skip): ").strip()  
             if remove_id:
                 try:
                     remove_id = int(remove_id)
+                    # Check the number before using it to find an item in the cart.
                     if 1 <= remove_id <= len(cart):
+                        # List positions start at 0, so subtract 1. Remove only that item.
                         removed_item = cart.pop(remove_id - 1)
                         print(f"{removed_item['name']} has been removed from your cart.")
                     else:
