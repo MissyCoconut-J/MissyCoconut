@@ -10,6 +10,6 @@ Stage 1 screenshots show the [menu and product data](screenshots/stage_1_menu_an
 
 The [Stage 2 screenshot](screenshots/stage_2_cart.png) shows how the cart adds items, checks the three-item limit and removes an item by its number.
 
-Save a screenshot of each stage in [Development screenshots](screenshots/) when that stage is ready.
+The final screenshots show [checkout and cash payments](screenshots/stage_3_checkout.png) and [reward points](screenshots/stage_3_rewards.png).
 
 [Back to assignment overview](../README.md)
